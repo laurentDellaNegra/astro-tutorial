@@ -2,10 +2,20 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
 const pageTitle = "Home Page";
+import img1 from "../assets/images/img1.jpg";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
+  <Image
+    src={img1}
+    width={1200}
+    decoding="async"
+    loading="eager"
+    alt="An awesome image"
+    style="width: 100%; height: auto;"
+  />
   <Greeting messages={["Hi", "Hello", "Howdy", "Hey there"]} />
   <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>
